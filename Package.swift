@@ -4,9 +4,11 @@ import PackageDescription
 
 let package = Package(
     name: "FontAwesome",
+    platforms: [
+        .iOS(.v12)
+    ],
     products: [
-        .library(name: "FontAwesome", targets: ["FontAwesome"]),
-        .executable(name: "tools", targets: ["tools"])
+        .library(name: "FontAwesome", targets: ["FontAwesome"])
     ],
     targets: [
         .target(
@@ -15,9 +17,6 @@ let package = Package(
             resources: [
                 .process("Resources/Fonts"),
             ]
-        ),
-        .target(
-            name: "tools"
         )
     ]
 )
